@@ -190,17 +190,33 @@
             </div>
             <div class="locations">
                 <h2 data-translate="our-locations">OUR LOCATIONS</h2>
-                <div class="location">
-                    <h3 data-translate="main-branch">Main Branch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 671-673 N Loundoun St, Winchester VA 22601-4965</p>
-                    <p><i class="fas fa-phone"></i> 123.456.7890</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-5pm</p>
-                </div>
-                <div class="location">
-                    <h3 data-translate="north-branch">North Branch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> North St #456, City</p>
-                    <p><i class="fas fa-phone"></i> 123.456.7891</p>
-                    <p><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-5pm</p>
+                <div class="location-container">
+                    <div class="location-info">
+                        <div class="location">
+                            <h3 data-translate="main-branch">Main Branch</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> 671-673 N Loundoun St, Winchester VA 22601-4965</p>
+                            <p><i class="fas fa-phone"></i> 123.456.7890</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-5pm</p>
+                        </div>
+                        <div class="location">
+                            <h3 data-translate="north-branch">North Branch</h3>
+                            <p><i class="fas fa-map-marker-alt"></i> North St #456, City</p>
+                            <p><i class="fas fa-phone"></i> 123.456.7891</p>
+                            <p><i class="fas fa-clock"></i> Mon-Fri: 7am-7pm, Sat: 8am-5pm</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div class="map-controls">
+                            <button class="map-btn active" data-map="main">Main Branch</button>
+                            <button class="map-btn" data-map="north">North Branch</button>
+                        </div>
+                        <div class="map-wrapper">
+                            <div id="location-map"></div>
+                            <div class="map-buttons">
+                                <button id="fullscreen-btn"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,5 +263,90 @@
     </footer>
 
     <script src="js/script.js"></script>
+    
+    <!-- Google Maps API -->
+    <script>
+        // Initialize the map
+        function initMap() {
+            // Main branch coordinates (Winchester, VA)
+            const mainLocation = { lat: 39.1865, lng: -78.1633 };
+            // North branch coordinates (placeholder)
+            const northLocation = { lat: 39.2065, lng: -78.1433 };
+            
+            // Create the map centered on main branch
+            const map = new google.maps.Map(document.getElementById("location-map"), {
+                zoom: 15,
+                center: mainLocation,
+                mapTypeControl: false,
+                streetViewControl: false,
+                fullscreenControl: false,
+                zoomControl: true,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+            
+            // Add marker for main branch
+            const mainMarker = new google.maps.Marker({
+                position: mainLocation,
+                map: map,
+                title: "E.M.A Tire & Auto - Main Branch",
+                icon: {
+                    url: "images/map-marker.png",
+                    scaledSize: new google.maps.Size(40, 40)
+                }
+            });
+            
+            // Add marker for north branch
+            const northMarker = new google.maps.Marker({
+                position: northLocation,
+                map: null, // Initially hidden
+                title: "E.M.A Tire & Auto - North Branch",
+                icon: {
+                    url: "images/map-marker.png",
+                    scaledSize: new google.maps.Size(40, 40)
+                }
+            });
+            
+            // Handle map location switching
+            const mapBtns = document.querySelectorAll('.map-btn');
+            mapBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    mapBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const mapType = this.getAttribute('data-map');
+                    if (mapType === 'main') {
+                        map.setCenter(mainLocation);
+                        mainMarker.setMap(map);
+                        northMarker.setMap(null);
+                    } else if (mapType === 'north') {
+                        map.setCenter(northLocation);
+                        mainMarker.setMap(null);
+                        northMarker.setMap(map);
+                    }
+                });
+            });
+            
+            // Handle fullscreen button
+            document.getElementById('fullscreen-btn').addEventListener('click', function() {
+                const mapElement = document.getElementById('location-map');
+                if (mapElement.requestFullscreen) {
+                    mapElement.requestFullscreen();
+                } else if (mapElement.webkitRequestFullscreen) {
+                    mapElement.webkitRequestFullscreen();
+                } else if (mapElement.msRequestFullscreen) {
+                    mapElement.msRequestFullscreen();
+                }
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap" async defer></script>
 </body>
 </html>
