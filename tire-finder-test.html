@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tire Finder Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            flex: 1;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        select, button {
+            width: 100%;
+            padding: 8px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tire Finder Test</h1>
+    
+    <div>
+        <h2>Buscar por Vehículo</h2>
+        <form id="vehicle-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vehicle-year">Año</label>
+                    <select id="vehicle-year" required>
+                        <option value="">Seleccionar Año</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-make">Marca</label>
+                    <select id="vehicle-make" required>
+                        <option value="">Seleccionar Marca</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="vehicle-model">Modelo</label>
+                    <select id="vehicle-model" required>
+                        <option value="">Seleccionar Modelo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="vehicle-trim">Trim</label>
+                    <select id="vehicle-trim">
+                        <option value="">Seleccionar Trim (Opcional)</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit">Buscar Neumáticos</button>
+        </form>
+    </div>
+
+    <div class="result" id="search-result">
+        <h3>Resultados de la Búsqueda</h3>
+        <p id="result-text"></p>
+    </div>
+
+    <script>
+        // Datos de muestra
+        const vehicleData = {
+            years: ['2025', '2024', '2023', '2022', '2021'],
+            makes: {
+                '2025': ['Acura', 'Audi', 'BMW', 'Chevrolet', 'Ford'],
+                '2024': ['Acura', 'Audi', 'BMW', 'Chevrolet', 'Ford'],
+                '2023': ['Acura', 'Audi', 'BMW', 'Chevrolet', 'Ford'],
+                '2022': ['Acura', 'Audi', 'BMW', 'Chevrolet', 'Ford'],
+                '2021': ['Acura', 'Audi', 'BMW', 'Chevrolet', 'Ford']
+            },
+            models: {
+                'Acura': ['ILX', 'MDX', 'RDX', 'TLX'],
+                'Audi': ['A3', 'A4', 'Q5', 'Q7'],
+                'BMW': ['3 Series', '5 Series', 'X3', 'X5'],
+                'Chevrolet': ['Camaro', 'Equinox', 'Malibu', 'Silverado'],
+                'Ford': ['Escape', 'Explorer', 'F-150', 'Mustang']
+            },
+            trims: {
+                'Camaro': ['LS', 'LT', 'SS', 'ZL1'],
+                'F-150': ['XL', 'XLT', 'Lariat', 'Platinum'],
+                'Mustang': ['EcoBoost', 'GT', 'Mach 1', 'Shelby GT500']
+            }
+        };
+
+        // Elementos del DOM
+        const yearSelect = document.getElementById('vehicle-year');
+        const makeSelect = document.getElementById('vehicle-make');
+        const modelSelect = document.getElementById('vehicle-model');
+        const trimSelect = document.getElementById('vehicle-trim');
+        const vehicleForm = document.getElementById('vehicle-form');
+        const searchResult = document.getElementById('search-result');
+        const resultText = document.getElementById('result-text');
+
+        // Poblar el dropdown de años
+        function populateYears() {
+            vehicleData.years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearSelect.appendChild(option);
+            });
+        }
+
+        // Poblar el dropdown de marcas basado en el año seleccionado
+        function populateMakes(year) {
+            // Limpiar opciones actuales
+            makeSelect.innerHTML = '<option value="">Seleccionar Marca</option>';
+            modelSelect.innerHTML = '<option value="">Seleccionar Modelo</option>';
+            trimSelect.innerHTML = '<option value="">Seleccionar Trim (Opcional)</option>';
+            
+            if (year && vehicleData.makes[year]) {
+                vehicleData.makes[year].forEach(make => {
+                    const option = document.createElement('option');
+                    option.value = make;
+                    option.textContent = make;
+                    makeSelect.appendChild(option);
+                });
+            }
+        }
+
+        // Poblar el dropdown de modelos basado en la marca seleccionada
+        function populateModels(make) {
+            // Limpiar opciones actuales
+            modelSelect.innerHTML = '<option value="">Seleccionar Modelo</option>';
+            trimSelect.innerHTML = '<option value="">Seleccionar Trim (Opcional)</option>';
+            
+            if (make && vehicleData.models[make]) {
+                vehicleData.models[make].forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = model;
+                    option.textContent = model;
+                    modelSelect.appendChild(option);
+                });
+            }
+        }
+
+        // Poblar el dropdown de trims basado en el modelo seleccionado
+        function populateTrims(model) {
+            // Limpiar opciones actuales
+            trimSelect.innerHTML = '<option value="">Seleccionar Trim (Opcional)</option>';
+            
+            if (model && vehicleData.trims[model]) {
+                vehicleData.trims[model].forEach(trim => {
+                    const option = document.createElement('option');
+                    option.value = trim;
+                    option.textContent = trim;
+                    trimSelect.appendChild(option);
+                });
+            }
+        }
+
+        // Event listeners
+        yearSelect.addEventListener('change', function() {
+            populateMakes(this.value);
+        });
+
+        makeSelect.addEventListener('change', function() {
+            populateModels(this.value);
+        });
+
+        modelSelect.addEventListener('change', function() {
+            populateTrims(this.value);
+        });
+
+        vehicleForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const year = yearSelect.value;
+            const make = makeSelect.value;
+            const model = modelSelect.value;
+            const trim = trimSelect.value;
+            
+            if (year && make && model) {
+                resultText.textContent = `Buscando neumáticos para ${year} ${make} ${model} ${trim ? trim : ''}...`;
+                searchResult.style.display = 'block';
+            } else {
+                alert('Por favor selecciona al menos Año, Marca y Modelo');
+            }
+        });
+
+        // Inicializar
+        populateYears();
+    </script>
+    <script src="js/menu.js"></script>
+
+</html>
+
+

@@ -1,0 +1,276 @@
+/* Location Page Styles */
+.location-hero {
+    background-image: url('../images/hero-location.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+}
+
+.location-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.location-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.location-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.location-hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.location-info {
+    padding: 60px 0;
+}
+
+.location-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.location-address {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 30px;
+}
+
+.location-address h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.location-address address {
+    font-style: normal;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-details p {
+    margin-bottom: 10px;
+}
+
+.phone-numbers-row {
+    display: flex;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.location-phone {
+    display: inline-block;
+    margin-right: 15px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.location-hours {
+    flex: 1;
+    min-width: 300px;
+}
+
+.location-hours h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table tr {
+    border-bottom: 1px solid #eee;
+}
+
+.hours-table tr:last-child {
+    border-bottom: none;
+}
+
+.hours-table td {
+    padding: 10px 0;
+}
+
+.hours-table td:first-child {
+    font-weight: 500;
+    width: 150px;
+}
+
+.location-map {
+    margin-top: 40px;
+}
+
+.location-map h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-services {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-item li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.service-item li:last-child {
+    border-bottom: none;
+}
+
+.cta-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+}
+
+.cta-btn.primary {
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.cta-btn.primary:hover {
+    background-color: #f8f8f8;
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.cta-btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .location-details {
+        flex-direction: column;
+    }
+    
+    .location-address, .location-hours {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .services-grid {
+        flex-direction: column;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

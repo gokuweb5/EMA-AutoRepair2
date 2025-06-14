@@ -1,0 +1,621 @@
+/* Business Page Styles */
+:root {
+    --primary-color: #8CB900; /* Verde Moderado */
+    --secondary-color: #333;
+    --accent-color: #f8f8f8;
+    --text-color: #555;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #777;
+    --white: #fff;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.business-hero {
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+}
+
+.business-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 200px;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Mission & Vision Section */
+.mission-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-box {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mission-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.mission-box h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.mission-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+/* Facilities Section */
+.facilities-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.facilities-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.facilities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.facility-item {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.facility-item:hover {
+    transform: translateY(-10px);
+}
+
+.facility-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.facility-content {
+    padding: 25px;
+}
+
+.facility-content h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.facility-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Equipment Section */
+.equipment-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.equipment-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+}
+
+.equipment-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.equipment-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.equipment-text h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.equipment-text p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.equipment-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.equipment-list li {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.equipment-list li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.experience-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+}
+
+.experience-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.experience-text h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.experience-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.experience-highlight {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.experience-number {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-right: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-details {
+    flex: 1;
+}
+
+.experience-details h4 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.experience-details p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Expertise Section */
+.expertise-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.expertise-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.expertise-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.expertise-text p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.expertise-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Community Section */
+.community-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.community-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.community-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.community-content > p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.community-initiatives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.initiative-item {
+    padding: 30px;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.initiative-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow);
+}
+
+.initiative-item i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.initiative-item h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.initiative-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 80px 0;
+    background-color: var(--light-gray);
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 50px;
+}
+
+.testimonials-slider {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-content {
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.testimonial-content p::before {
+    content: '\201C';
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-right: 5px;
+    vertical-align: -10px;
+}
+
+.testimonial-content p::after {
+    content: '\201D';
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-left: 5px;
+    vertical-align: -10px;
+}
+
+.testimonial-author h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.testimonial-author p {
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cta-btn.primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.cta-btn.primary:hover {
+    background-color: #3d8b40; /* Verde más oscuro */
+    transform: translateY(-5px);
+}
+
+.cta-btn.secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.cta-btn.secondary:hover {
+    background-color: var(--white);
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .equipment-content,
+    .history-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .equipment-image {
+        order: 1;
+    }
+    
+    .equipment-text {
+        order: 2;
+    }
+    
+    .experience-image {
+        order: 1;
+    }
+    
+    .experience-text {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .experience-highlight {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .experience-number {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .mission-vision-grid,
+    .facilities-grid,
+    .community-initiatives {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .cta-btn {
+        width: 100%;
+    }
+}

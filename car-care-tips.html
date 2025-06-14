@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Care Tips - E.M.A Tire & Auto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-links">
+                    <a href="./our-business.html" data-translate="our-business">Our Business</a>
+                    <a href="#news" data-translate="news">News</a>
+                    <a href="#careers" data-translate="careers">Careers</a>
+                    <a href="./car-care-tips.html" data-translate="car-care">Car Care Tips</a>
+                    <a href="#assistance" data-translate="roadside">Roadside Assistance</a>
+                </div>
+                <div class="contact-info">
+                    <a href="#quote" class="quote-btn" data-translate="get-quote">Get a Quote</a>
+                    <a href="tel:5405047840" class="phone-number"><i class="fas fa-phone"></i> 540-504-7840</a>
+                    <a href="tel:5405047831" class="phone-number"><i class="fas fa-phone"></i> 540-504-7831</a>
+                    <button id="language-toggle" class="lang-toggle" data-lang="en">Español</button>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/Ema-logo1.png" alt="E.M.A Tire & Auto Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <div class="dropdown">
+                        <a href="#services" class="dropdown-toggle" data-translate="services">Services</a>
+                        <div class="dropdown-menu">
+                            <!-- Menu content will be loaded from menu.js -->
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a href="./shop-tires.html" class="dropdown-toggle" data-translate="shop-tires">Shop Tires</a>
+                        <div class="dropdown-menu">
+                            <!-- Menu content will be loaded from menu.js -->
+                        </div>
+                    </div>
+                    <a href="./locations.html" data-translate="locations">Locations</a>
+                    <a href="#club" data-translate="my-club">MyCar Club</a>
+                    <a href="./ofertas.html" data-translate="ofertas">Ofertas</a>
+                </div>
+                <a href="#schedule" class="schedule-btn" data-translate="schedule">Schedule Your Visit</a>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Car Care Tips Hero Section -->
+    <section class="service-hero tips-hero">
+        <div class="container">
+            <div class="service-hero-content">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h1>Car Care Tips</h1>
+                <p>Expert advice to keep your vehicle running smoothly and safely</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="tips-intro">
+        <div class="container">
+            <div class="section-header">
+                <h2>Maintaining Your Vehicle</h2>
+                <p>Practical advice to extend the life of your vehicle and avoid costly repairs</p>
+            </div>
+            <div class="tips-intro-content">
+                <p>Regular maintenance and proper care of your vehicle not only extends its life but also ensures your safety on the road. At E.M.A Tire & Auto, we believe in empowering our customers with knowledge to make informed decisions about their vehicles. Browse through our comprehensive collection of car care tips organized by category to find the information you need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Categories Section -->
+    <section class="tips-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card" id="seasonal">
+                    <div class="category-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Seasonal Maintenance</h3>
+                    <p>Tips for preparing your vehicle for different weather conditions</p>
+                    <a href="./seasonal-tips.html" class="category-link">View Tips</a>
+                </div>
+                <div class="category-card" id="preventative">
+                    <div class="category-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Preventative Maintenance</h3>
+                    <p>Regular checks to prevent breakdowns and extend vehicle life</p>
+                    <a href="./preventative-tips.html" class="category-link">View Tips</a>
+                </div>
+                <div class="category-card" id="emergency">
+                    <div class="category-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Emergency Preparedness</h3>
+                    <p>What to do in case of vehicle emergencies</p>
+                    <a href="./emergency-tips.html" class="category-link">View Tips</a>
+                </div>
+                <div class="category-card" id="fuel">
+                    <div class="category-icon">
+                        <i class="fas fa-gas-pump"></i>
+                    </div>
+                    <h3>Fuel Efficiency</h3>
+                    <p>How to maximize your vehicle's fuel economy</p>
+                    <a href="./fuel-efficiency-tips.html" class="category-link">View Tips</a>
+                </div>
+                <div class="category-card" id="tires">
+                    <div class="category-icon">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3>Tire Care</h3>
+                    <p>Maintaining proper tire pressure, rotation, and alignment</p>
+                    <a href="./tire-care-tips.html" class="category-link">View Tips</a>
+                </div>
+                <div class="category-card" id="diy">
+                    <div class="category-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>DIY Maintenance</h3>
+                    <p>Simple maintenance tasks you can perform at home</p>
+                    <a href="./diy-maintenance-tips.html" class="category-link">View Tips</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Tips Section -->
+    <section class="tips-detail" id="seasonal-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seasonal Maintenance Tips</h2>
+                <p>Keep your vehicle running smoothly year-round</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-sun"></i> Summer Car Care</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-summer.jpg" alt="Summer Car Care" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Beat the Heat with These Summer Maintenance Tips</h4>
+                        <ul>
+                            <li><strong>Check your cooling system:</strong> Ensure your coolant is at the proper level and concentration to prevent overheating.</li>
+                            <li><strong>Inspect air conditioning:</strong> Have your A/C system checked before temperatures soar to ensure it's working efficiently.</li>
+                            <li><strong>Check tire pressure:</strong> Heat causes air pressure in tires to expand. Check pressure when tires are cold for accurate readings.</li>
+                            <li><strong>Replace wiper blades:</strong> Summer storms can be intense. Make sure your wiper blades are in good condition.</li>
+                            <li><strong>Check battery:</strong> Heat accelerates battery fluid evaporation and internal damage. Have your battery tested if it's more than 3 years old.</li>
+                            <li><strong>Protect your interior:</strong> Use sunshades and consider window tinting to prevent dashboard cracking and interior fading.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-snowflake"></i> Winter Car Care</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-winter.jpg" alt="Winter Car Care" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Prepare Your Vehicle for Cold Weather</h4>
+                        <ul>
+                            <li><strong>Check your battery:</strong> Cold weather reduces battery power. Have your battery tested and replaced if necessary.</li>
+                            <li><strong>Switch to winter tires:</strong> If you live in an area with heavy snow, consider switching to winter tires for better traction.</li>
+                            <li><strong>Check antifreeze levels:</strong> Ensure you have the proper coolant mix to prevent freezing in cold temperatures.</li>
+                            <li><strong>Inspect your heater and defroster:</strong> Make sure they're working properly before the cold sets in.</li>
+                            <li><strong>Keep your gas tank at least half full:</strong> This prevents gas line freeze-up and ensures you have fuel in case of emergency.</li>
+                            <li><strong>Pack an emergency kit:</strong> Include blankets, flashlight, ice scraper, small shovel, and other winter emergency items.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-cloud-rain"></i> Spring & Fall Maintenance</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-spring.jpg" alt="Spring and Fall Car Care" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Transitional Season Vehicle Care</h4>
+                        <ul>
+                            <li><strong>Check and replace wiper blades:</strong> Spring rain and fall leaves require good visibility.</li>
+                            <li><strong>Inspect tires:</strong> Check tread depth and consider rotating your tires as seasons change.</li>
+                            <li><strong>Clean undercarriage:</strong> Remove salt residue (spring) or prepare for winter salt (fall).</li>
+                            <li><strong>Check belts and hoses:</strong> Extreme temperature changes can cause rubber components to crack or become brittle.</li>
+                            <li><strong>Test your brakes:</strong> Ensure they're in good condition before wet or icy conditions arrive.</li>
+                            <li><strong>Change your oil:</strong> Consider switching between summer and winter oil weights if recommended for your vehicle.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preventative Maintenance Tips Section -->
+    <section class="tips-detail" id="preventative-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preventative Maintenance Tips</h2>
+                <p>Regular checks to prevent breakdowns and extend vehicle life</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-oil-can"></i> Fluid Maintenance</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-fluids.jpg" alt="Fluid Maintenance" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Keep Your Vehicle's Fluids in Check</h4>
+                        <ul>
+                            <li><strong>Engine oil:</strong> Check monthly and change according to your owner's manual (typically every 3,000-7,500 miles).</li>
+                            <li><strong>Transmission fluid:</strong> Check every 3 months and change every 30,000-60,000 miles.</li>
+                            <li><strong>Brake fluid:</strong> Check every 6 months and change every 2 years or as recommended.</li>
+                            <li><strong>Power steering fluid:</strong> Check monthly and top off as needed.</li>
+                            <li><strong>Coolant/antifreeze:</strong> Check seasonally and flush/replace every 2-5 years.</li>
+                            <li><strong>Windshield washer fluid:</strong> Top off monthly or as needed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-car-battery"></i> Battery Care</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-battery.jpg" alt="Battery Care" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Extend Your Battery Life</h4>
+                        <ul>
+                            <li><strong>Regular testing:</strong> Have your battery tested every 6 months, especially before extreme temperature seasons.</li>
+                            <li><strong>Clean connections:</strong> Keep battery terminals clean from corrosion using a wire brush and baking soda solution.</li>
+                            <li><strong>Secure mounting:</strong> Ensure your battery is securely mounted to prevent vibration damage.</li>
+                            <li><strong>Limit short trips:</strong> Short trips don't allow the battery to fully recharge. Take longer drives occasionally.</li>
+                            <li><strong>Turn off electronics:</strong> Turn off lights, radio, and A/C before turning off the engine to reduce initial load on next start.</li>
+                            <li><strong>Consider a battery tender:</strong> If your vehicle sits unused for extended periods, use a battery tender to maintain charge.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuel Efficiency Tips Section -->
+    <section class="tips-detail" id="fuel-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Fuel Efficiency Tips</h2>
+                <p>Save money and reduce environmental impact with better fuel economy</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-tachometer-alt"></i> Driving Habits for Better MPG</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-fuel-efficiency.jpg" alt="Fuel Efficiency" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Simple Changes to Improve Fuel Economy</h4>
+                        <ul>
+                            <li><strong>Avoid aggressive driving:</strong> Rapid acceleration and braking can lower fuel economy by up to 33% on highways.</li>
+                            <li><strong>Observe speed limits:</strong> Fuel economy typically decreases rapidly at speeds above 50 mph.</li>
+                            <li><strong>Remove excess weight:</strong> An extra 100 pounds in your vehicle can reduce MPG by about 1%.</li>
+                            <li><strong>Use cruise control:</strong> Maintaining a constant speed on highways improves fuel efficiency.</li>
+                            <li><strong>Combine errands:</strong> Several short trips taken from a cold start can use twice as much fuel as one longer trip.</li>
+                            <li><strong>Avoid excessive idling:</strong> Turn off your engine when parked for more than 30 seconds.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-car"></i> Vehicle Maintenance for Fuel Efficiency</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-fuel-maintenance.jpg" alt="Fuel Maintenance" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Keep Your Vehicle Tuned for Optimal Performance</h4>
+                        <ul>
+                            <li><strong>Regular tune-ups:</strong> Fixing a serious maintenance problem can improve fuel economy by up to 40%.</li>
+                            <li><strong>Proper tire inflation:</strong> Under-inflated tires can lower gas mileage by about 0.2% for every 1 PSI drop.</li>
+                            <li><strong>Use recommended motor oil:</strong> Using the manufacturer's recommended grade can improve fuel economy by 1-2%.</li>
+                            <li><strong>Replace air filters:</strong> A clean air filter can improve acceleration time and fuel economy.</li>
+                            <li><strong>Check for engine issues:</strong> A faulty oxygen sensor can reduce fuel economy by up to 40%.</li>
+                            <li><strong>Properly aligned wheels:</strong> Misaligned wheels drag and reduce fuel efficiency.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tire Care Tips Section -->
+    <section class="tips-detail" id="tire-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tire Care Tips</h2>
+                <p>Extend tire life and improve safety with proper maintenance</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-compress-arrows-alt"></i> Tire Pressure Maintenance</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-tire-pressure.jpg" alt="Tire Pressure" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>The Importance of Proper Inflation</h4>
+                        <ul>
+                            <li><strong>Check pressure monthly:</strong> Tires naturally lose about 1 PSI per month and 1 PSI for every 10°F drop in temperature.</li>
+                            <li><strong>Use the recommended pressure:</strong> Find this on the driver's door jamb sticker, not the tire sidewall.</li>
+                            <li><strong>Check when cold:</strong> Measure tire pressure before driving or at least 3 hours after parking.</li>
+                            <li><strong>Don't forget the spare:</strong> Check your spare tire's pressure regularly too.</li>
+                            <li><strong>Benefits of proper inflation:</strong> Improves fuel economy, extends tire life, enhances handling, and increases safety.</li>
+                            <li><strong>Visual inspection:</strong> Bulges, cracks, or objects embedded in tires should be checked by a professional.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-sync-alt"></i> Rotation, Alignment & Balancing</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-tire-rotation.jpg" alt="Tire Rotation" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Maximize Tire Life with Regular Service</h4>
+                        <ul>
+                            <li><strong>Rotate every 5,000-8,000 miles:</strong> This ensures even wear across all tires.</li>
+                            <li><strong>Alignment check annually:</strong> Or whenever you notice pulling to one side or uneven tire wear.</li>
+                            <li><strong>Balance when needed:</strong> If you feel vibration at certain speeds, your tires may need balancing.</li>
+                            <li><strong>Check tread depth:</strong> Use the penny test - insert a penny with Lincoln's head upside down. If you can see the top of his head, it's time for new tires.</li>
+                            <li><strong>Watch for wear patterns:</strong> Different wear patterns indicate different issues - center wear (over-inflation), edge wear (under-inflation), or one-sided wear (alignment issues).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIY Maintenance Tips Section -->
+    <section class="tips-detail" id="diy-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>DIY Maintenance Tips</h2>
+                <p>Simple tasks you can perform at home to maintain your vehicle</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-search"></i> Regular Inspections</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-inspection.jpg" alt="Vehicle Inspection" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Monthly Vehicle Check-Up</h4>
+                        <ul>
+                            <li><strong>Check all lights:</strong> Headlights, brake lights, turn signals, and interior lights.</li>
+                            <li><strong>Inspect wiper blades:</strong> Replace if they streak or skip.</li>
+                            <li><strong>Check tire pressure and tread:</strong> Use a quality pressure gauge and the penny test.</li>
+                            <li><strong>Look under the vehicle:</strong> Check for fluid leaks on your driveway or parking spot.</li>
+                            <li><strong>Test the battery:</strong> Many auto parts stores will test your battery for free.</li>
+                            <li><strong>Check belts and hoses:</strong> Look for cracks, fraying, or softness in the rubber.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-hands-wash"></i> Cleaning & Detailing</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-cleaning.jpg" alt="Car Cleaning" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Keep Your Vehicle Looking Its Best</h4>
+                        <ul>
+                            <li><strong>Wash regularly:</strong> Every two weeks to remove dirt, salt, and contaminants that can damage paint.</li>
+                            <li><strong>Wax quarterly:</strong> Provides a protective layer against environmental damage.</li>
+                            <li><strong>Clean the interior:</strong> Vacuum regularly and use appropriate cleaners for different surfaces.</li>
+                            <li><strong>Protect dashboard:</strong> Use UV protectant to prevent cracking and fading.</li>
+                            <li><strong>Clean air vents:</strong> Use a small brush or compressed air to remove dust from vents.</li>
+                            <li><strong>Treat leather:</strong> Clean and condition leather seats every 3-6 months to prevent cracking.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Tips Section -->
+    <section class="tips-detail" id="emergency-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2>Emergency Preparedness Tips</h2>
+                <p>Be ready for unexpected situations on the road</p>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-toolbox"></i> Emergency Kit Essentials</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-emergency-kit.jpg" alt="Emergency Kit" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Items Every Driver Should Keep in Their Vehicle</h4>
+                        <ul>
+                            <li><strong>Basic tools:</strong> Screwdrivers, pliers, adjustable wrench, and duct tape.</li>
+                            <li><strong>Jumper cables or portable jump starter:</strong> To restart your battery in case of failure.</li>
+                            <li><strong>Flashlight and extra batteries:</strong> Essential for nighttime emergencies.</li>
+                            <li><strong>First aid kit:</strong> For minor injuries until professional help arrives.</li>
+                            <li><strong>Reflective warning triangles or flares:</strong> To alert other drivers if you're stopped on the roadside.</li>
+                            <li><strong>Blanket and warm clothes:</strong> In case you're stranded in cold weather.</li>
+                            <li><strong>Non-perishable snacks and water:</strong> To sustain you during extended waits for assistance.</li>
+                            <li><strong>Portable phone charger:</strong> To ensure you can call for help.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-card">
+                <div class="tip-header">
+                    <h3><i class="fas fa-exclamation-circle"></i> What to Do When Your Car Breaks Down</h3>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-image">
+                        <img src="images/tips-breakdown.jpg" alt="Car Breakdown" class="placeholder-img">
+                    </div>
+                    <div class="tip-text">
+                        <h4>Steps to Take During a Roadside Emergency</h4>
+                        <ol>
+                            <li><strong>Get to safety:</strong> Pull as far off the road as possible. On highways, exit if you can, even on a flat tire.</li>
+                            <li><strong>Make your vehicle visible:</strong> Turn on hazard lights and set up reflective triangles or flares if safe to do so.</li>
+                            <li><strong>Stay with your vehicle:</strong> Unless it's unsafe, remain in your vehicle with doors locked.</li>
+                            <li><strong>Call for help:</strong> Contact roadside assistance, a trusted mechanic, or emergency services.</li>
+                            <li><strong>Communicate your location:</strong> Note landmarks, mile markers, or use GPS coordinates.</li>
+                            <li><strong>Conserve phone battery:</strong> Make necessary calls, then turn off your phone or put it in low-power mode.</li>
+                            <li><strong>Be cautious with strangers:</strong> If someone stops to help, request they call roadside assistance for you rather than accepting direct help.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="service-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Professional Auto Service?</h2>
+                <p>Our expert technicians at E.M.A Tire & Auto are ready to help keep your vehicle in top condition.</p>
+                <a href="#schedule" class="cta-button">Schedule Your Service</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/Ema-logo1.png" alt="E.M.A Tire & Auto Logo">
+                    <p>Your trusted auto service provider in Winchester, VA since 2018.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="./locations.html">Locations</a></li>
+                        <li><a href="#club">MyCar Club</a></li>
+                        <li><a href="./ofertas.html">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 671-673 N Loudoun St, Winchester VA 22601-4965</p>
+                    <p><i class="fas fa-phone"></i> 540-504-7840</p>
+                    <p><i class="fas fa-phone"></i> 540-504-7831</p>
+                    <p><i class="fas fa-envelope"></i> info@ematireandauto.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 7:30AM-6PM | Sat: 7:30AM-4PM</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 E.M.A Tire & Auto. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
+

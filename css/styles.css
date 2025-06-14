@@ -1,10 +1,10 @@
 /* Global Styles */
 :root {
-    --primary-color: #00843D;
-    --secondary-color: #0F3B5F;
-    --accent-color: #00843D;
+    --primary-color: #8CB900;
+    --secondary-color: #ffffff;
+    --accent-color: #8CB900;
     --light-color: #f4f4f4;
-    --dark-color: #0F3B5F;
+    --dark-color: #333333;
     --text-color: #333;
     --max-width: 1200px;
 }
@@ -70,6 +70,7 @@ header {
 .contact-info {
     display: flex;
     align-items: center;
+    white-space: nowrap;
 }
 
 .quote-btn {
@@ -87,9 +88,19 @@ header {
     color: white;
 }
 
+.phones-container {
+    display: flex;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
 .phone-number {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 15px;
+    margin-right: 10px;
+    display: inline-block;
+    padding-right: 1px;
+    white-space: nowrap;
 }
 
 .lang-toggle {
@@ -105,11 +116,11 @@ header {
 }
 
 .lang-toggle:hover {
-    background-color: #006e32;
+    background-color: #7AA000;
 }
 
 .main-nav {
-    background-color: #0F3B5F;
+    background-color: #333333;
     padding: 0;
     height: 60px;
     position: relative;
@@ -123,21 +134,33 @@ header {
 }
 
 .logo {
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     z-index: 10;
-    top: -50px;
+    top: -40px;
     left: 40px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 50%;
+    top: -8px;
+    left: -10px;
+    z-index: 10;
 }
 
 .logo img {
     height: 150px;
+    position: relative;
+    z-index: 11;
 }
 
 .nav-links {
@@ -145,16 +168,98 @@ header {
     margin-left: 195px;
 }
 
-.nav-links a {
+.nav-links > a, 
+.dropdown > a {
     margin: 0 15px;
     font-weight: 500;
     color: white;
     transition: color 0.3s ease;
+    padding: 20px 0;
+    display: inline-block;
+    position: relative;
 }
 
-.nav-links a:hover {
+.nav-links > a:hover, 
+.dropdown > a:hover {
     color: var(--primary-color);
     opacity: 0.8;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 25px;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-columns {
+    display: flex;
+    gap: 30px;
+}
+
+.dropdown-column {
+    flex: 1;
+}
+
+.dropdown-column h3 {
+    color: var(--primary-color);
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-column h3 i {
+    margin-right: 8px;
+}
+
+.dropdown-column ul {
+    list-style: none;
+}
+
+.dropdown-column li {
+    margin-bottom: 10px;
+}
+
+.dropdown-column a {
+    color: var(--text-color);
+    font-size: 14px;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 3px 0;
+}
+
+.dropdown-column a:hover {
+    color: var(--primary-color);
 }
 
 .schedule-btn {
@@ -167,7 +272,7 @@ header {
 }
 
 .schedule-btn:hover {
-    background-color: #006e32;
+    background-color: #7AA000;
 }
 
 .mobile-menu-btn {
@@ -177,6 +282,433 @@ header {
 }
 
 /* Hero Section */
+.service-hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+/* Specific Hero Backgrounds */
+.tire-repair-hero {
+    background-image: url('../images/hero-tirerepair.jpg');
+}
+
+.tire-rotation-hero {
+    background-image: url('../images/hero-tirerotation.jpg');
+}
+
+.tpms-services-hero {
+    background-image: url('../images/hero-TPMS.jpg');
+}
+
+.wheel-alignment-hero {
+    background-image: url('../images/hero-alignments.jpg');
+}
+
+.wheel-balancing-hero {
+    background-image: url('../images/hero-balancing.jpg');
+}
+
+.shop-tires-hero {
+    background-image: url('../images/hero-shop.jpg');
+}
+
+.oil-change-hero {
+    background-image: url('../images/hero-oil.jpg');
+}
+
+.emissions-hero {
+    background-image: url('../images/hero-emissions.jpg');
+}
+
+.batteries-hero {
+    background-image: url('../images/hero-batteries.jpg');
+}
+
+.belts-hero {
+    background-image: url('../images/hero-belts.jpg');
+}
+
+.maintenance-hero {
+    background-image: url('../images/hero-maintenance.jpg');
+}
+
+.accessories-hero {
+    background-image: url('../images/hero-accessories.jpg');
+}
+
+.diagnostics-hero {
+    background-image: url('../images/hero-diagnostics.jpg');
+}
+
+.ac-hero {
+    background-image: url('../images/hero-ac.jpg');
+}
+
+.brakes-hero {
+    background-image: url('../images/hero-brakes.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.engine-hero {
+    background-image: url('../images/hero-engine.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.wheel-alignment-hero {
+    background-image: url('../images/hero-alignments.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.exhaust-hero {
+    background-image: url('../images/hero-exhaust.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.fuel-hero {
+    background-image: url('../images/hero-fuel.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.steering-hero {
+    background-image: url('../images/hero-steering.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.transmission-hero {
+    background-image: url('../images/hero-transmission.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tips-hero {
+    background-image: url('../images/hero-tips.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tips-seasonal-hero {
+    background-image: url('../images/hero-seasonal.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para Car Care Tips */
+.tips-intro {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.tips-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.category-icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.category-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.category-link:hover {
+    background-color: #0056b3;
+}
+
+.tips-detail {
+    padding: 50px 0;
+}
+
+.tips-detail:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.tip-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.tip-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.tip-header h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.tip-content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.tip-image {
+    flex: 0 0 300px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.tip-image img {
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tip-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.tip-text h4 {
+    margin-top: 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.tip-text ul, .tip-text ol {
+    padding-left: 20px;
+}
+
+.tip-text li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.placeholder-img {
+    background-color: #eee;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tip-content {
+        flex-direction: column;
+    }
+    
+    .tip-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0 10px 0;
+    margin-top: 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.footer-links {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 15px;
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #4CAF50;
+}
+
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #4CAF50;
+    width: 16px;
+}
+
+.footer-social {
+    flex: 1;
+    min-width: 150px;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: #4CAF50;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85em;
+    margin: 5px 0;
+}
+
+.disclaimer {
+    font-size: 0.75em;
+    color: #aaa;
+}
+
+.hero-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 .hero {
     background-image: url('../images/hero-bg.jpg');
     background-size: cover;
@@ -184,6 +716,90 @@ header {
     color: white;
     padding: 100px 0;
     position: relative;
+}
+
+/* Service Hero Section */
+.service-hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    text-align: center;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.tire-repair-hero {
+    background-image: url('../images/hero-tirerepair.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tire-rotation-hero {
+    background-image: url('../images/hero-tirerotation.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tpms-hero {
+    background-image: url('../images/hero-TPMS.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tips-preventative-hero {
+    background-image: url('../images/hero-preventative.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tips-fuel-hero {
+    background-image: url('../images/hero-fueltips.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.tips-emergency-hero {
+    background-image: url('../images/hero-emergencytips.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.service-hero-content h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.service-hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 .hero::before {
@@ -213,6 +829,34 @@ header {
     margin-bottom: 15px;
 }
 
+.business-hours {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.business-hours p {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.special-offer {
+    background-color: rgba(140, 185, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.special-offer p {
+    margin-bottom: 0;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
 .cta-button {
     display: inline-block;
     background-color: var(--primary-color);
@@ -225,7 +869,7 @@ header {
 }
 
 .cta-button:hover {
-    background-color: #006e32;
+    background-color: #7AA000;
 }
 
 /* Services Quick Links */
@@ -481,7 +1125,7 @@ header {
 }
 
 .submit-btn:hover {
-    background-color: #006e32;
+    background-color: #7AA000;
 }
 
 .location {
@@ -518,17 +1162,19 @@ footer {
 }
 
 .footer-logo {
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    position: relative;
+    overflow: visible;
 }
 
 .footer-logo img {
     height: 150px;
+    position: relative;
+    z-index: 11;
 }
 
 .footer-logo p {
@@ -536,10 +1182,12 @@ footer {
 }
 
 .footer-links h3,
+.footer-services h3,
 .footer-contact h3,
 .footer-social h3 {
     margin-bottom: 20px;
     font-size: 18px;
+    color: var(--primary-color);
 }
 
 .footer-links ul {
@@ -596,6 +1244,1043 @@ footer {
     font-size: 14px;
 }
 
+.disclaimer {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Service Details Styles */
+.service-details {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+/* Service Description Styles */
+.service-description {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: var(--dark-color);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+.service-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.service-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.service-text h3 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin: 25px 0 15px;
+}
+
+.service-text ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.service-text li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-text li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+}
+
+.service-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Warning Signs Styles */
+.service-warning-signs {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+.warning-signs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.warning-sign {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.warning-sign:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.warning-icon {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.warning-sign h3 {
+    color: var(--dark-color);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.warning-sign p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .warning-signs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .warning-signs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Process Steps Styles */
+.service-process {
+    padding: 70px 0;
+    background-color: #fff;
+}
+
+.process-steps {
+    margin-top: 40px;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+.step-content h3 {
+    color: var(--dark-color);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* FAQ Styles */
+.service-faqs {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+.faq-container {
+    margin-top: 40px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(76, 175, 80, 0.05);
+}
+
+.faq-question h3 {
+    color: var(--dark-color);
+    font-size: 18px;
+    margin: 0;
+}
+
+.faq-toggle {
+    color: var(--primary-color);
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    display: none;
+}
+
+.faq-answer p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Call to Action Styles */
+.service-cta {
+    padding: 70px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--dark-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.service-details .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.service-info h2 {
+    color: var(--dark-color);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.service-info h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin: 30px 0 15px;
+}
+
+.service-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.process-steps {
+    margin: 30px 0;
+}
+
+.step {
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.step-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin-bottom: 5px;
+    color: var(--dark-color);
+}
+
+.service-list {
+    list-style: none;
+    margin-left: 10px;
+}
+
+.service-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.service-list li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.service-list li i.fa-times {
+    color: #e74c3c;
+}
+
+.service-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cta-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.cta-card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 70px 0;
+    background-color: white;
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+.faq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--dark-color);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 200px;
+}
+
+/* Shop Tires Styles */
+.tire-promotions {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+.promotions-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: thin;
+}
+
+.promotion-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.promotion-brand {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.brand-logo {
+    max-height: 60px;
+    max-width: 180px;
+}
+
+.promotion-content {
+    padding: 20px;
+}
+
+.promotion-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.promotion-expiry {
+    font-size: 14px;
+    color: #666;
+    margin: 15px 0;
+}
+
+.promo-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.promo-btn:hover {
+    background-color: #7AA000;
+}
+
+/* Tire Finder Styles */
+.tire-finder {
+    padding: 70px 0;
+}
+
+.finder-tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.tab {
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.finder-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.finder-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.finder-btn:hover {
+    background-color: #7AA000;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.brand-item {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.brand-item img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Tire Categories */
+.tire-categories {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.category-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-content {
+    padding: 20px;
+}
+
+.category-content h3 {
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.category-content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.category-btn {
+    display: inline-block;
+    color: var(--primary-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.category-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.category-btn:hover::after {
+    transform: scaleX(1);
+}
+
+/* Tire Guide */
+.tire-guide {
+    padding: 70px 0;
+}
+
+.tire-guide .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.guide-steps {
+    margin: 30px 0;
+}
+
+.guide-step {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.guide-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.guide-btn:hover {
+    background-color: #7AA000;
+}
+
+.guide-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Promotion Banner */
+.promotion-banner {
+    background-color: var(--primary-color);
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+}
+
+.promotion-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.promotion-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.promotion-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.promotion-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.promotion-content .cta-button {
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.promotion-content .cta-button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ofertas Page Styles */
+/* Estilo específico para la sección hero de la página de ofertas */
+.hero-section.ofertas-hero {
+    height: 600px; /* Altura aumentada para la sección hero de ofertas */
+    background-position: center center; /* Centrar la imagen */
+    background-size: cover; /* Asegurar que la imagen cubra todo el espacio */
+}
+
+/* Mover el texto de la sección hero para que no quede tapado por el logo */
+.hero-section.ofertas-hero .hero-content {
+    padding-top: 200px; /* Aumentar el padding superior para bajar el texto */
+    text-align: right; /* Alinear el texto a la derecha */
+    padding-right: 10%; /* Añadir padding a la derecha */
+}
+
+.ofertas-section {
+    padding: 70px 0;
+    background-color: #f9f9f9;
+}
+
+.ofertas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.oferta-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.oferta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.oferta-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.oferta-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.discount-badge {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.oferta-content {
+    padding: 20px;
+}
+
+.price-container {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 18px;
+}
+
+.sale-price {
+    color: #ff6b6b;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.oferta-details {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.oferta-details li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 25px;
+}
+
+.oferta-details li:before {
+    content: '✓';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 8px;
+}
+
+.oferta-expiry {
+    font-style: italic;
+    color: #666;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* Redeem Section Styles */
+.redeem-section {
+    padding: 70px 0;
+    background-color: white;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.step-item {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-5px);
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 24px;
+}
+
+.step-item h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Terms Section Styles */
+.terms-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.terms-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.terms-content ul {
+    padding-left: 20px;
+}
+
+.terms-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* CTA Section Styles */
+.cta-section {
+    padding: 70px 0;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.cta-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+}
+
+.cta-button i {
+    margin-right: 8px;
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .service-features {
@@ -647,6 +2332,39 @@ footer {
     .hero-content {
         margin-left: 20px;
         margin-right: 20px;
+    }
+    
+    /* Responsive styles for phone numbers */
+    .phone-number {
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    
+    .contact-info {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding: 5px 0;
+    }
+    
+    /* Responsive styles for Tire Repair page */
+    .service-details .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-cta {
+        margin-top: 30px;
+    }
+    
+    .dropdown-menu {
+        min-width: 100%;
+        left: 0;
+        right: 0;
+        padding: 15px;
+    }
+    
+    .dropdown-columns {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
